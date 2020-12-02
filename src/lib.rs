@@ -23,7 +23,7 @@ pub fn load_inputs(filename: &str) -> Vec<u32> {
     inputs
 }
 
-pub fn find_terms(inputs: Vec<u32>, sum: u32) -> (u32, u32) {
+pub fn find_two_terms(inputs: Vec<u32>, sum: u32) -> (u32, u32) {
     // initialize a new BTree
     let mut inputs_btree = BTreeMap::new();
 
@@ -50,7 +50,7 @@ pub fn find_terms(inputs: Vec<u32>, sum: u32) -> (u32, u32) {
 pub fn solve_day_1a(filename: &str) -> u32 {
     let inputs = load_inputs(filename);
 
-    let (x, y) = find_terms(inputs.to_vec(), 2020);
+    let (x, y) = find_two_terms(inputs.to_vec(), 2020);
     let sum = x + y;
     let product = x * y;
     println!("In this list, the two entries that sum to {} are {} and {}. Multiplying them together produces {} * {} = {}, so the correct answer is {}.", sum, x, y, x, y, product, product);
@@ -63,13 +63,13 @@ mod tests {
     use super::*;
 
     #[test]
-    fn find_terms_works() {
+    fn find_two_terms_works() {
         // read inputs
         let inputs = vec![1721, 979, 366, 299, 675, 1456];
         // and sort them
         //inputs.sort();
 
-        let (x, y) = find_terms(inputs.to_vec(), 2020);
+        let (x, y) = find_two_terms(inputs.to_vec(), 2020);
         assert_eq!(x + y, 2020);
     }
 
