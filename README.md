@@ -14,7 +14,6 @@
 Last year I was doing day 4 on day 11 in Python, a language I am very proficient with...so then of course I should do this year with a language I've done minimal things with thus far...
 
 ## Screenshots
-![Example output after 1M iterations](./tri.png)
 
 ## Technologies
 * rust 
@@ -22,7 +21,7 @@ Last year I was doing day 4 on day 11 in Python, a language I am very proficient
 ## Setup
 ```
 cargo test
-rust build --release
+cargo build --release
 ```
 
 ## Status
