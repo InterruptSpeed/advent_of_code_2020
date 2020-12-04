@@ -72,10 +72,7 @@ pub fn solve_day_1a(filename: &str) -> u32 {
     let inputs = load_inputs(filename);
 
     let (x, y) = find_two_terms(inputs.to_vec(), 2020);
-    let sum = x + y;
     let product = x * y;
-    println!("In this list, the two entries that sum to {} are {} and {}. Multiplying them together produces {} * {} = {}, so the correct answer is {}.", sum, x, y, x, y, product, product);
-    println!("{} * {} = {}", x, y, product); 
     product
 }
 
@@ -83,9 +80,7 @@ pub fn solve_day_1b(filename: &str) -> u32 {
     let inputs = load_inputs(filename);
 
     let (x, y, z) = find_three_terms(inputs.to_vec(), 2020);
-    let sum = x + y + z;
     let product = x * y * z;
-    println!("Using the above example again, the three entries that sum to {} are {}, {}, and {}. Multiplying them together produces the answer, {}.", sum, x, y, z, product);
     product
 }
 
@@ -112,24 +107,11 @@ mod tests {
     }
 
     #[test]
-    fn solve_day_1a_works() {
-        let filename = "./data/day_1_input.txt";
-        let result = solve_day_1a(filename);
-        assert!(result > 0);
-    }
-
-    #[test]
     fn find_three_terms_works() {
         let inputs = vec![1721, 979, 366, 299, 675, 1456];
 
         let (x, y, z) = find_three_terms(inputs.to_vec(), 2020);
         assert_eq!(x + y + z, 2020);
     }
-
-    #[test]
-    fn solve_day_1b_works() {
-        let filename = "./data/day_1_input.txt";
-        let result = solve_day_1b(filename);
-        assert!(result > 0); 
-    }
+    
 }

@@ -21,6 +21,7 @@ Last year I was doing day 4 on day 11 in Python, a language I am very proficient
 ## Setup
 ```
 cargo test
+cargo test day_1 -- --nocapture
 cargo build --release
 ```
 
